@@ -1,0 +1,19 @@
+#mouse-movement-detect {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #000;
+}
+
+#mouse-movement-info {
+  position: fixed;
+  cursor: default;
+
+  top: 0;
+  left: 0;
+
+  color: #fff;
+
+  font-size: 24px;
+  font-weight: 900;
+}
