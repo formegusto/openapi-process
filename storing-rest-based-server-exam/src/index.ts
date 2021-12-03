@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import mongooseInit from "./models";
 import { MouseMovementInfo } from "./models/MouseMovement/types";
 import MouseMovementModel from "./models/MouseMovement";
+import cors from "cors";
 
 dotenv.config();
 
@@ -12,6 +13,7 @@ const app = express();
   await mongooseInit();
 })();
 
+app.use(cors());
 app.use(express.json());
 
 app.post("/mouse-movement", async (req: Request, res: Response) => {

@@ -1,3 +1,12 @@
+@keyframes icanfly {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(2000px, -100px);
+  }
+}
+
 #mouse-movement-detect {
   width: 100vw;
   height: 100vh;
@@ -16,4 +25,7 @@
 
   font-size: 24px;
   font-weight: 900;
+}
+#mouse-movement-info.click {
+  animation: icanfly 1s forwards linear;
 }
