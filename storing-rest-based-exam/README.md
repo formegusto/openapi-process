@@ -1,46 +1,46 @@
-# Getting Started with Create React App
+# REST API Based Storing
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> **예시를 위해, 자체적으로 Database를 가지고 값을 넣을 수 없는 웹 브라우저 환경에서, 사용자의 마우스 움직임을 5초마다 기록하는 센서가 있다고 가정해보겠다.**
 
-## Available Scripts
+![실시간 사용자 마우스 움직임 감지 센서](%5BData%20Storing%5D%20sensor%201210f7cadeee4980ba0252aef6682d8f/Untitled%202.png)
 
-In the project directory, you can run:
+실시간 사용자 마우스 움직임 감지 센서
 
-### `yarn start`
+![DB에 저장된 데이터](%5BData%20Storing%5D%20sensor%201210f7cadeee4980ba0252aef6682d8f/Untitled%203.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+DB에 저장된 데이터
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 웹 브라우저 환경자체는 자체적인 Database를 가지고 그곳에 연결할 수가 없다. 하지만 인터넷 연결이 되어있다면 자체적으로 Database와 연결할 수 있는 Server Side 의 환경에게 자신이 수집한 데이터를 넘겨주고, Server Side 쪽에서 연결된 Database에 센서가 넘겨준 데이터를 저장하게 되는 방식이다.
 
-### `yarn test`
+```tsx
+const result = await axios.post("http://localhost:8080/mouse-movement", {
+  ...offset,
+});
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```tsx
+app.post("/mouse-movement", async (req: Request, res: Response) => {
+  const info = <MouseMovementInfo>req.body;
 
-### `yarn build`
+  try {
+    const model = new MouseMovementModel({
+      ...info,
+      createdAt: new Date(),
+    });
+    const result = await model.save();
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    return res.status(200).json({
+      status: true,
+      result,
+    });
+  } catch (err: any) {
+    console.error(err);
+    return res.status(500).json({
+      status: false,
+      message: err.message,
+    });
+  }
+});
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- 여러 예시들을 봤는데, 다음과 같이 자체적으로 Database를 건들 수 없는 센서의 경우에는 별도의 웹서버를 구성하여 거기에 api 요청을 보내서 Database에 값을 넣기도 하는 것 같다.

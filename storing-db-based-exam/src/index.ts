@@ -20,9 +20,10 @@ const rl = readline.createInterface({
 const start = async () => {
   for await (const line of rl) {
     const aArr = line.match(/[aA]/g);
-    console.log(aArr);
+    const count = aArr ? aArr.length : 0;
+    console.log(line, "a Count ===>", count);
     const report = new HowAModel({
-      count: aArr ? aArr.length : 0,
+      count: count,
       createdAt: new Date(),
     });
     report.save();
