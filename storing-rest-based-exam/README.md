@@ -2,11 +2,11 @@
 
 > **예시를 위해, 자체적으로 Database를 가지고 값을 넣을 수 없는 웹 브라우저 환경에서, 사용자의 마우스 움직임을 5초마다 기록하는 센서가 있다고 가정해보겠다.**
 
-![실시간 사용자 마우스 움직임 감지 센서](%5BData%20Storing%5D%20sensor%201210f7cadeee4980ba0252aef6682d8f/Untitled%202.png)
+![](https://user-images.githubusercontent.com/52296323/144571175-74106f02-427f-4aa9-b834-460d5ae92cea.png)
 
 실시간 사용자 마우스 움직임 감지 센서
 
-![DB에 저장된 데이터](%5BData%20Storing%5D%20sensor%201210f7cadeee4980ba0252aef6682d8f/Untitled%203.png)
+![](https://user-images.githubusercontent.com/52296323/144571189-f8eaa220-04fd-4c57-ad37-9a9c5d537cc3.png)
 
 DB에 저장된 데이터
 
