@@ -2,7 +2,7 @@
 
 # 1. Role Process
 
-![Untitled](%5BDocumentaion%5D%20Plan%202a5e6476e7b4415a90662c69c42a1e15/Untitled.png)
+![](https://user-images.githubusercontent.com/52296323/144570990-3b1a8939-9b15-4810-89ea-026aa108a390.png)
 
 1. User
    1. Open API의 사용자
