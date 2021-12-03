@@ -2,11 +2,11 @@
 
 > **예시를 위해 사용자가 무언가를 입력하고 엔터를 쳤을 때, 해당 라인에 a라는 글자가 몇개가 있는지 기록하는 센서가 있다고 가정해보겠다.**
 
-![실시간 사용자 입력 센서데이터 출력](%5BData%20Storing%5D%20sensor%201210f7cadeee4980ba0252aef6682d8f/Untitled.png)
+![](https://user-images.githubusercontent.com/52296323/144571094-eadc191b-7dc9-4fd8-b679-f02a5a50d593.png)
 
 실시간 사용자 입력 센서데이터 출력
 
-![DB에 저장된 데이터](%5BData%20Storing%5D%20sensor%201210f7cadeee4980ba0252aef6682d8f/Untitled%201.png)
+![](https://user-images.githubusercontent.com/52296323/144571105-cc08c2a7-d583-43b4-a3de-94c57a19a8dc.png)
 
 DB에 저장된 데이터
 
