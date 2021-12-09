@@ -4,7 +4,7 @@
 
 - 이를 참고해서 이 문제를 바라보면 간단하다. 어떤 서비스가 존재하고, 우리 측에 서비스가 존재한다면 두 개의 서비스는 모두 서버로 구성되어 있을 것이고, 서버는 Database에 직접 접근할 수도 있고, REST API 요청을 할 수도 있다.
 
-![Untitled](%5BData%20Share%5D%20openapi%20-%20other%20openapi%2014d9fd46df3740d184c4c0dfa6770822/Untitled.png)
+![](https://user-images.githubusercontent.com/52296323/144742418-c0aeab57-77e4-4de7-94cd-e211a4147688.png)
 
 1. KETI API Server 에서 Other API Server에 저장 REST API에 데이터를 보내주는 방식.
 2. Other API Server 에서 KETI API Server에 데이터 요청 REST API를 보내고, KETI API Server 로 부터 응답으로 데이터를 받는 방식.
